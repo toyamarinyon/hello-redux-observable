@@ -1,4 +1,5 @@
 import React from 'react';
+import PingButton from './PingButton';
 
 export default class Ping extends React.Component {
   render() {
@@ -7,6 +8,7 @@ export default class Ping extends React.Component {
       <div>
         <h1>is pinging: {isPinging.toString()}</h1>
         <button onClick={ping}>Start PING</button>
+        <PingButton ping={ping} isPinging={isPinging} />
       </div>
     );
   }
