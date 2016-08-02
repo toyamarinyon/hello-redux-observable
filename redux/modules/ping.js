@@ -5,7 +5,7 @@ const PING = 'hello-redux-observable/ping/PING';
 const PONG = 'hello-redux-observable/ping/PONG';
 
 // Reducer
-export default function reducer (state = { isPinging: false }, action) {
+export default function reducer(state = { isPinging: false }, action) {
   switch (action.type) {
     case PING:
       return { isPinging: true };
@@ -19,12 +19,12 @@ export default function reducer (state = { isPinging: false }, action) {
 }
 
 // Epic(Async)
-export function epic (action$) {
+export function epic(action$) {
   return action$.ofType(PING).delay(1000).mapTo({ type: PONG });
 }
 
 // Action Creators
-export function ping () {
+export function ping() {
   return { type: PING };
 }
 
