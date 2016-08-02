@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default class PingButton extends React.Component {
-  render() {
-    const { ping, isPinging } = this.props;
-    const buttonText = isPinging ? 'PINGING...' : 'Start PING';
-    return (
-      <button onClick={ping}>{buttonText}</button>
-    );
-  }
+const propTypes = {
+  ping: PropTypes.func.isRequired,
+  isPinging: PropTypes.bool.isRequired
+};
+
+function PingButton(props) {
+  return <button onClick={props.ping} >Ping</button>;
 }
+
+PingButton.propTypes = propTypes;
+
+export default PingButton;
