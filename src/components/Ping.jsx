@@ -8,9 +8,8 @@ const propTypes = {
 
 function Ping(props) {
   return (
-    <div>
+    <div className="container">
       <h1>is pinging: {props.isPinging.toString()}</h1>
-      <button onClick={props.ping}>Start PING</button>
       <PingButton {...props} />
     </div>
   );
